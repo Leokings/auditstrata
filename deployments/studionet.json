@@ -1,0 +1,77 @@
+{
+  "batch": "A",
+  "contract_address": "0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B",
+  "contract_source": {
+    "deployed_source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b",
+    "path": "contracts/audit_strata.py",
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+    "source_exact_for_deployment": true,
+    "source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b"
+  },
+  "deployment_transaction_hash": "0x0917906445fe25263b0662f2c2cab6d123cbeabd7cbbe5fb244ee9c1ed7e3b82",
+  "explorer": {
+    "contract": "https://explorer-studio.genlayer.com/address/0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B",
+    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x0917906445fe25263b0662f2c2cab6d123cbeabd7cbbe5fb244ee9c1ed7e3b82",
+    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0x87b090b11d9b7fc1ed8339e74ba21c4c5df0145c72c7d0306ba556fcbe14d17d"
+  },
+  "intelligent_transaction_hash": "0x87b090b11d9b7fc1ed8339e74ba21c4c5df0145c72c7d0306ba556fcbe14d17d",
+  "network": {
+    "chain_id": 61999,
+    "name": "studionet",
+    "rpc": "https://studio.genlayer.com/api"
+  },
+  "repository": "auditstrata",
+  "schema": "genlayer-intelligent-contract-deployment/v2",
+  "setup_transaction_hashes": [
+    "0x417cb59b03584694b268702312855b687b6ab3b8d42004810141036a028cc20b",
+    "0x897a2808aca223b88e414219a77abe85c5bbc341fcfb4477825229bb75faf705",
+    "0x250ac0f4b6856c0902016b0bcf0e17f5ae650de579b6a786067f5d5afca37384",
+    "0xb796645685c75df8845126260fc4d3cc9287dd41ed307a5e7eb40e734466a9c3",
+    "0x61e08eb9c075bc115877c4bcd5e3c624839c5d3c45b05d539ca096acb24f01ed"
+  ],
+  "source": {
+    "deployed_source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b",
+    "schema_methods_verified": [
+      "draw_sample",
+      "open_population",
+      "sampled_record"
+    ],
+    "source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b"
+  },
+  "tooling": {
+    "genlayer_test": "0.29.2",
+    "genvm_linter": "0.11.0",
+    "pyright": "1.1.411",
+    "pytest": "9.1.1",
+    "studionet_poll_interval_ms": 6000
+  },
+  "verification": {
+    "deployed_source_exact": true,
+    "execution_success": true,
+    "latest_final_readback": true,
+    "observed": {
+      "sample_indexes": [
+        0,
+        1
+      ],
+      "state": "DRAWN",
+      "strata": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    "schema_read": true,
+    "status": "FINALIZED"
+  },
+  "verified_at": "2026-08-25T21:29:40.645406Z",
+  "wallet_addresses": [
+    "0x956036F7B79104e23e04018C8a0Da57abD8a39DE",
+    "0x1e48F193F71BEaEA091807657D672e6C110a61Ab",
+    "0xa2e6238922b367303C679B2Be01B35e157af257d",
+    "0x6932dC926476665658a02cFe1Fd67e9fb01D30df",
+    "0xE1B09aDCB310a0d7c318d813BA801C0Eb50Cf29c"
+  ],
+  "wallet_policy": "repository-specific disposable bundle outside workspace; no cross-repository reuse"
+}
