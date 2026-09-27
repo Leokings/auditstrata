@@ -1,8 +1,5 @@
 # StudioNet deployment evidence
 
-`studionet.json` binds `contracts/audit_strata.py` at SHA-256
-`28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b` to a finalized StudioNet deployment, a real intelligent write,
-latest-final state, exact deployed-source bytes, the generated schema, and five
-unique public test-role addresses. It contains no private key.
+`studionet.json` binds `contracts/audit_strata.py` at SHA-256 `8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee` to a finalized StudioNet deployment and complete two-wallet commit/collect/seal/draw/acknowledge/close flow. It records latest-final state, required schema methods, quorum checks, and byte-for-byte deployed-source equality. It contains public addresses and transaction hashes only—no wallet secret or unrevealed seed.
 
-Contract explorer: https://explorer-studio.genlayer.com/address/0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B
+Contract explorer: https://explorer-studio.genlayer.com/address/0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785

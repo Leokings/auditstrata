@@ -1,20 +1,20 @@
 {
   "batch": "A",
-  "contract_address": "0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B",
+  "contract_address": "0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785",
   "contract_source": {
-    "deployed_source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b",
+    "deployed_source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee",
     "path": "contracts/audit_strata.py",
     "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
     "source_exact_for_deployment": true,
-    "source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b"
+    "source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee"
   },
-  "deployment_transaction_hash": "0x0917906445fe25263b0662f2c2cab6d123cbeabd7cbbe5fb244ee9c1ed7e3b82",
+  "deployment_transaction_hash": "0x52a026e830d55d50ad99f0e3390afb8fd93e267549ed2658f5585b5f6505fd4d",
   "explorer": {
-    "contract": "https://explorer-studio.genlayer.com/address/0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B",
-    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x0917906445fe25263b0662f2c2cab6d123cbeabd7cbbe5fb244ee9c1ed7e3b82",
-    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0x87b090b11d9b7fc1ed8339e74ba21c4c5df0145c72c7d0306ba556fcbe14d17d"
+    "contract": "https://explorer-studio.genlayer.com/address/0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785",
+    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x52a026e830d55d50ad99f0e3390afb8fd93e267549ed2658f5585b5f6505fd4d",
+    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0xffe96c2de69312d083081d8955e86d9f73ca5f28eb1f64095a818df08576dee7"
   },
-  "intelligent_transaction_hash": "0x87b090b11d9b7fc1ed8339e74ba21c4c5df0145c72c7d0306ba556fcbe14d17d",
+  "intelligent_transaction_hash": "0xffe96c2de69312d083081d8955e86d9f73ca5f28eb1f64095a818df08576dee7",
   "network": {
     "chain_id": 61999,
     "name": "studionet",
@@ -23,55 +23,58 @@
   "repository": "auditstrata",
   "schema": "genlayer-intelligent-contract-deployment/v2",
   "setup_transaction_hashes": [
-    "0x417cb59b03584694b268702312855b687b6ab3b8d42004810141036a028cc20b",
-    "0x897a2808aca223b88e414219a77abe85c5bbc341fcfb4477825229bb75faf705",
-    "0x250ac0f4b6856c0902016b0bcf0e17f5ae650de579b6a786067f5d5afca37384",
-    "0xb796645685c75df8845126260fc4d3cc9287dd41ed307a5e7eb40e734466a9c3",
-    "0x61e08eb9c075bc115877c4bcd5e3c624839c5d3c45b05d539ca096acb24f01ed"
+    "0xd88ddda1900fd39935f9c0f2dc263cb6d81da601475439a56d9685a3038bce34",
+    "0xccd19cd545f504509401f5059ce98ee5ff06e4ce0e205cb5deb634442a7e58ef",
+    "0xafb102b7c0c94236f87fb31a5eb518c6abe0fcc27e8ee802fc7df096d98c7306",
+    "0x82eea5aafad6e10870a20e6d1b74aee46705c35720628c8517841948da516a3f",
+    "0xcf3943be0b0af8e4d17e4010b977211bee41ab1ff6520d602ead222542f878fe",
+    "0x1458407e278aa5e053bc0bf3206d9dedceeee611c4660a58d04f5ef5cc07156a",
+    "0x7118013a1e666b0d3527e19dc67066eae2ccd182e3ffa7f81eebdda63c9773ec",
+    "0x34f11fb85f0ee0b43942ced49cf67170e12b5089991084e192c2b867ed11d04a"
   ],
   "source": {
-    "deployed_source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b",
+    "deployed_source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee",
     "schema_methods_verified": [
+      "acknowledge_sample",
+      "append_record",
+      "close_population",
+      "commit_seed",
       "draw_sample",
+      "get_population",
       "open_population",
-      "sampled_record"
+      "sampled_record",
+      "seal_population"
     ],
-    "source_sha256": "28e68bb3e26b175f13e3fb3735b2f755f3110ad535ab5c155599472c22a9cd0b"
+    "source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee"
   },
   "tooling": {
     "genlayer_test": "0.29.2",
     "genvm_linter": "0.11.0",
     "pyright": "1.1.411",
-    "pytest": "9.1.1",
-    "studionet_poll_interval_ms": 6000
+    "pytest": "9.1.1"
   },
   "verification": {
+    "agreeing_validator_executions_successful": true,
     "deployed_source_exact": true,
     "execution_success": true,
     "latest_final_readback": true,
     "observed": {
-      "sample_indexes": [
-        0,
-        1
-      ],
-      "state": "DRAWN",
-      "strata": [
-        0,
-        1,
-        0,
-        1
-      ]
+      "commitment_verified": true,
+      "labels": [0, 1],
+      "records_digest": "356f955a7a9fcb3cfdbfd02c4453eac6e7c302d619663205c8f19befd4b8e253",
+      "sample_indexes": [1, 0],
+      "sampling_seed_digest": "de46acdfb50dc05cf900981bf7e3a5d8a8178afa708b5b94e7bbbfc2846016c9",
+      "schema": "auditstrata/population/v2",
+      "state": "CLOSED"
     },
     "schema_read": true,
-    "status": "FINALIZED"
+    "status": "FINALIZED",
+    "validator_quorum_checked": true
   },
-  "verified_at": "2026-08-25T21:29:40.645406Z",
+  "verified_at": "2026-09-27T18:26:31+01:00",
   "wallet_addresses": [
-    "0x956036F7B79104e23e04018C8a0Da57abD8a39DE",
-    "0x1e48F193F71BEaEA091807657D672e6C110a61Ab",
-    "0xa2e6238922b367303C679B2Be01B35e157af257d",
-    "0x6932dC926476665658a02cFe1Fd67e9fb01D30df",
-    "0xE1B09aDCB310a0d7c318d813BA801C0Eb50Cf29c"
+    "0x797d3B25fB2cCA0Ff93F60df1910267f3822D655",
+    "0x2B630000A9F4a1CDa40803Cae8CF80Dc9141d21b"
   ],
-  "wallet_policy": "repository-specific disposable bundle outside workspace; no cross-repository reuse"
+  "wallet_policy": "Owner and auditor roles are distinct and loaded from the OS credential vault; no private key or mnemonic is stored in this repository."
 }

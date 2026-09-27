@@ -1,28 +1,23 @@
 # Security
 
-## Protected assets
-
-Record integrity, role separation, bounded execution, deterministic algorithm
-results, and exact deployed-source provenance.
-
 ## Controls
 
-- concrete GenVM runner and Python tool versions are pinned;
-- keys, list sizes, numeric bands, text lengths, ASCII boundaries, and JSON shapes are bounded;
-- model output is normalized before storage;
-- a custom validator independently checks every nondeterministic call;
-- write roles are checked against `gl.message.sender_address`;
-- duplicate records and duplicate role actions are rejected;
-- the live proof reads finalized state and exact deployed source;
-- wallet secrets remain in ACL-restricted files outside the workspace.
+- concrete GenVM runner and Python dependencies are pinned;
+- owner and auditor must be distinct and the auditor address nonzero;
+- seed material and commitments must be exactly 32 bytes of lowercase-normalized hex;
+- commitments are single-use;
+- collection begins only after commitment and becomes immutable at seal;
+- the canonical record digest is bound into the sampling seed;
+- sample and stratum sizes, text, keys, and model vectors are bounded;
+- model output uses an exact closed schema and rejects booleans or out-of-range labels;
+- stratum order and record order are derived deterministically from the seed;
+- every selected slot requires auditor acknowledgement before owner close;
+- all deployed source bytes and required schema methods are checked against StudioNet.
+
+## Threat boundary
+
+Commit–seal–reveal prevents one non-colluding role from learning both the final population and random seed before committing its choice. It cannot prevent owner–auditor collusion, selective presentation of separate populations, weak off-chain random generation, or withheld actions.
 
 ## Public-data warning
 
-All calldata and stored content are public. Do not submit secrets, personal data,
-private documents, or confidential source material.
-
-## Excluded guarantees
-
-This contract does not move funds and does not authenticate real-world identity,
-ownership, authority, evidence provenance, or legal consequences. Report a
-suspected issue privately before public disclosure.
+All records and acknowledgements are public. The seed preimage becomes public in reveal transaction calldata. Never use a password or reusable secret as the seed, and do not submit confidential audit material.

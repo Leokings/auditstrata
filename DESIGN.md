@@ -1,33 +1,17 @@
-# Design boundary
+# Design
 
-## Mechanism fingerprint
+## Commit–seal–reveal mechanism
 
-Consensus assigns records to a closed stratum set; seeded hashing and round-robin selection create a reproducible cross-stratum sample.
+AuditStrata separates control of the population from control of randomness. The auditor commits `sha256("auditstrata/v2|seed|" + secret)` before collection. The owner then supplies records and seals a canonical digest. Reveal is accepted only from the auditor and only when the preimage matches.
 
-This is the contract's reusable mechanism, not a renamed domain wrapper.
+The final sampling seed domain-separates the population id, sealed record digest, and secret. Each record receives a deterministic hash inside its validator-assigned stratum. A seed-derived stratum permutation removes fixed low-index priority, and round-robin selection continues until the requested sample size is reached.
 
-## Consensus boundary
+## State machine
 
-Validators independently re-execute the bounded semantic task and the custom validator rejects malformed or materially different output.
+`AWAITING_SEED_COMMITMENT` → `COLLECTING` → `SEALED` → `DRAWN` → `CLOSED`.
 
-Every model response is normalized to an exact JSON shape, bounded list sizes,
-closed indexes or bands, and deterministic ordering before it can affect state.
-Inputs are explicitly framed as untrusted data rather than instructions.
-
-## On-chain responsibilities
-
-- validate bounded public inputs and isolate wallet roles;
-- run the one semantic operation through GenLayer consensus;
-- execute the mechanism-specific deterministic algorithm;
-- persist independently keyed records and expose typed views;
-- reject duplicate actions and invalid state transitions.
+Only the auditor commits, reveals, and acknowledges. Only the owner appends, seals, and closes. Records cannot change after `SEALED`, and a sample cannot close until every selected slot has a nonempty auditor acknowledgement.
 
 ## Off-chain responsibilities
 
-User interface, login, private drafts, source collection, provenance display,
-notifications, analytics, and any real-world action remain off-chain.
-
-## Non-goals
-
-No payment, custody, identity attestation, legal ruling, physical verification,
-professional advice, or guarantee that caller-supplied facts are true.
+Real-world auditor identity, organizational independence, secure preimage storage before reveal, record provenance, private source documents, and actions based on the sample remain off-chain.

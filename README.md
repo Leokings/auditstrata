@@ -1,21 +1,18 @@
 # AuditStrata
 
-Stratified deterministic audit sampling.
+AuditStrata is a reusable GenLayer Intelligent Contract for commit–seal–reveal audit sampling. A distinct auditor commits to a random seed before the owner supplies records, the owner seals an immutable record digest, validators classify records into a closed stratum set, and deterministic hashing draws a reproducible cross-stratum sample.
 
-Batch: A
+## How it works
 
-## Why it is GenLayer-native
-
-Consensus assigns records to a closed stratum set; seeded hashing and round-robin selection create a reproducible cross-stratum sample.
-
-The LLM handles only the bounded semantic step. Deterministic contract code owns
-the reusable algorithm, state transitions, access control, tie-breaking, and
-views. One deployment supports many caller-keyed records; it is not tied to the
-StudioNet fixture or one organization.
+1. `open_population` records bounded strata, sample size, owner, and a distinct nonzero auditor.
+2. The auditor calls `commit_seed` with a SHA-256 commitment before record collection opens. Commitments cannot be reused.
+3. The owner appends up to 30 public records and calls `seal_population`, which stores a canonical record digest and prevents later mutation.
+4. The auditor calls `draw_sample` with the 32-byte seed preimage. The contract verifies the commitment, validators assign one stratum per record, and deterministic hashing selects the sample using both the sealed record digest and seed.
+5. The auditor acknowledges every selected slot; only then can the owner call `close_population`.
 
 ## Public interface
 
-Write methods: `open_population`, `append_record`, `draw_sample`, `acknowledge_sample`, `close_population`
+Write methods: `open_population`, `commit_seed`, `append_record`, `seal_population`, `draw_sample`, `acknowledge_sample`, `close_population`
 
 View methods: `get_population`, `sampled_record`, `sample_is_closed`
 
@@ -27,22 +24,15 @@ genvm-lint check contracts/audit_strata.py
 genvm-lint typecheck contracts/audit_strata.py --strict
 pytest tests/direct -q
 python tests/run_glsim.py --port 4000 --validators 5
-gltest tests/integration -q --network localnet
+pytest tests/integration/test_audit_strata_consensus.py -q
 ```
 
-The live smoke test is opt-in and requires a repository-specific wallet bundle
-outside the repository. It waits for finalized receipts, reads `LATEST_FINAL`,
-retrieves deployed source and schema from StudioNet, and fails unless the source
-bytes exactly match this repository.
+Verified results on 2026-09-27: lint PASS, strict typecheck PASS, 21 direct tests PASS, one five-validator integration flow PASS, and a complete two-wallet StudioNet flow PASS.
 
-StudioNet contract: https://explorer-studio.genlayer.com/address/0x598D31Bd9570b5b5f7Cb9656E112Dd3668aebc1B
+StudioNet contract: https://explorer-studio.genlayer.com/address/0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785
 
-See `AUDIT.md`, `ORIGINALITY.md`, `SOURCE_POLICY.md`, `SECURITY.md`,
-`SUBMISSION.md`, and `deployments/studionet.json` for the final evidence.
+The finalized live flow committed a random seed, sealed two records, drew both strata, acknowledged both slots, and reached `CLOSED`. See `deployments/studionet.json` for every transaction and the exact source proof.
 
 ## Boundary
 
-The contract moves no funds and does not establish identity, ownership,
-professional authority, source authenticity, physical truth, or legal effect.
-All caller inputs and calldata are public. Off-chain clients own authentication,
-privacy, source curation, indexing, and the decision to rely on a result.
+All records, commitments, the revealed seed transaction, acknowledgements, calldata, and results are public. The preimage must remain private only until reveal. Validator classification does not authenticate record provenance. The contract moves no funds.
