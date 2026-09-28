@@ -1,6 +1,6 @@
 # Security audit
 
-Reviewed: 2026-09-27
+Reviewed: 2026-09-28
 
 Scope: `contracts/audit_strata.py` at SHA-256 `8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee`, direct and integration tests, review documents, and the exact StudioNet deployment in `deployments/studionet.json`.
 
@@ -25,20 +25,21 @@ Scope: `contracts/audit_strata.py` at SHA-256 `8e32a15feb7b4c905afe356ff75809731
 | Independent local validators | PASS, exactly 5 validators |
 | StudioNet owner and distinct auditor flow | PASS |
 | Every StudioNet transaction finalized with successful agreeing-validator execution | PASS |
+| Minimum agreeing StudioNet votes | PASS, 3 of 5; some receipts were 5 of 5 |
 | Latest-final `CLOSED` readback | PASS |
 | Deployed source byte equality | PASS |
 | Deployed schema method verification | PASS |
 | Secrets in repository | NONE |
 
-StudioNet contract: `0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785`
+StudioNet contract: `0x64c2c19B9C00313DB2CE853D58aEA698543e811E`
 
-Deployment transaction: `0x52a026e830d55d50ad99f0e3390afb8fd93e267549ed2658f5585b5f6505fd4d`
+Deployment transaction: `0x6802df3cb0f44a516d835a5d6e8a6fd5d67c864547b6f91b7815e142bc4b0144`
 
-Intelligent transaction: `0xffe96c2de69312d083081d8955e86d9f73ca5f28eb1f64095a818df08576dee7`
+Intelligent transaction: `0xa3ce39b43e653336b84f9b50e772e71377ac8fdc03b39f8c837fb0ca4e8f2f8b`
 
-Close transaction: `0x34f11fb85f0ee0b43942ced49cf67170e12b5089991084e192c2b867ed11d04a`
+Close transaction: `0x2dbeaab53d20e083ea59db13e9d6951bfc5fdf9f0625c2298424453e68084204`
 
-Observed state: `{"state":"CLOSED","labels":[0,1],"sample_indexes":[1,0],"commitment_verified":true}`
+Observed state: `{"schema":"auditstrata/population/v2","state":"CLOSED","record_count":4,"labels":[0,0,1,1],"sample_indexes":[3,1],"acknowledgements_complete":true}`
 
 ## Residual trust assumptions
 

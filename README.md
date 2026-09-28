@@ -27,11 +27,11 @@ python tests/run_glsim.py --port 4000 --validators 5
 pytest tests/integration/test_audit_strata_consensus.py -q
 ```
 
-Verified results on 2026-09-27: lint PASS, strict typecheck PASS, 21 direct tests PASS, one five-validator integration flow PASS, and a complete two-wallet StudioNet flow PASS.
+Verified results on 2026-09-28: lint PASS, strict typecheck PASS, 21 direct tests PASS, one five-validator integration flow PASS, and a fresh complete two-wallet StudioNet flow PASS.
 
-StudioNet contract: https://explorer-studio.genlayer.com/address/0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785
+StudioNet contract: https://explorer-studio.genlayer.com/address/0x64c2c19B9C00313DB2CE853D58aEA698543e811E
 
-The finalized live flow committed a random seed, sealed two records, drew both strata, acknowledged both slots, and reached `CLOSED`. See `deployments/studionet.json` for every transaction and the exact source proof.
+The finalized live flow committed a random seed, sealed four records, classified them as `[0,0,1,1]`, drew two records across the strata, acknowledged both slots, and reached `CLOSED`. See `deployments/studionet.json` for every transaction and the exact source proof.
 
 ## Boundary
 

@@ -1,39 +1,46 @@
 {
-  "batch": "A",
-  "contract_address": "0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785",
-  "contract_source": {
-    "deployed_source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee",
-    "path": "contracts/audit_strata.py",
-    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
-    "source_exact_for_deployment": true,
-    "source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee"
-  },
-  "deployment_transaction_hash": "0x52a026e830d55d50ad99f0e3390afb8fd93e267549ed2658f5585b5f6505fd4d",
-  "explorer": {
-    "contract": "https://explorer-studio.genlayer.com/address/0x88Ec3EC24A1947CE5AE95aC9acd7134AC1343785",
-    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x52a026e830d55d50ad99f0e3390afb8fd93e267549ed2658f5585b5f6505fd4d",
-    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0xffe96c2de69312d083081d8955e86d9f73ca5f28eb1f64095a818df08576dee7"
-  },
-  "intelligent_transaction_hash": "0xffe96c2de69312d083081d8955e86d9f73ca5f28eb1f64095a818df08576dee7",
+  "schema": "genlayer-intelligent-contract-deployment/v2",
+  "repository": "auditstrata",
   "network": {
-    "chain_id": 61999,
     "name": "studionet",
+    "chain_id": 61999,
     "rpc": "https://studio.genlayer.com/api"
   },
-  "repository": "auditstrata",
-  "schema": "genlayer-intelligent-contract-deployment/v2",
-  "setup_transaction_hashes": [
-    "0xd88ddda1900fd39935f9c0f2dc263cb6d81da601475439a56d9685a3038bce34",
-    "0xccd19cd545f504509401f5059ce98ee5ff06e4ce0e205cb5deb634442a7e58ef",
-    "0xafb102b7c0c94236f87fb31a5eb518c6abe0fcc27e8ee802fc7df096d98c7306",
-    "0x82eea5aafad6e10870a20e6d1b74aee46705c35720628c8517841948da516a3f",
-    "0xcf3943be0b0af8e4d17e4010b977211bee41ab1ff6520d602ead222542f878fe",
-    "0x1458407e278aa5e053bc0bf3206d9dedceeee611c4660a58d04f5ef5cc07156a",
-    "0x7118013a1e666b0d3527e19dc67066eae2ccd182e3ffa7f81eebdda63c9773ec",
-    "0x34f11fb85f0ee0b43942ced49cf67170e12b5089991084e192c2b867ed11d04a"
-  ],
-  "source": {
+  "verified_at": "2026-09-28T09:00:16.326204+00:00",
+  "contract_address": "0x64c2c19B9C00313DB2CE853D58aEA698543e811E",
+  "deployment_transaction_hash": "0x6802df3cb0f44a516d835a5d6e8a6fd5d67c864547b6f91b7815e142bc4b0144",
+  "contract_source": {
+    "path": "contracts/audit_strata.py",
+    "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+    "source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee",
     "deployed_source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee",
+    "source_exact_for_deployment": true
+  },
+  "wallet_addresses": {
+    "owner": "0x797d3B25fB2cCA0Ff93F60df1910267f3822D655",
+    "auditor": "0x2B630000A9F4a1CDa40803Cae8CF80Dc9141d21b"
+  },
+  "transactions": [
+    {"method": "deploy", "hash": "0x6802df3cb0f44a516d835a5d6e8a6fd5d67c864547b6f91b7815e142bc4b0144", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5},
+    {"method": "open_population", "hash": "0x6953e9c2d369725d794ac6129dc714d065f1fc474a663fbf0b42a3cb30e590b2", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "commit_seed", "hash": "0x4a2750bdc2f7d86cd6167f57b1761331321aa1a8701e053ad0e25ed442516e61", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "append_record", "hash": "0xa0125ad56691119b8e660ebc2f12fa61cc79823776cb125a1d2bab3b534250a4", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "append_record", "hash": "0x34d92cb1956d040bd85377b603394a14bd16efec2f192758772e5f525e1f28c3", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "append_record", "hash": "0x117f565c7301a322baa04b201efd2117dd9d5a6ceb3c88a7de60caa8447b2a70", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5},
+    {"method": "append_record", "hash": "0x82490115bded587502e5774df734ceea64fdfdd15f8ec9754fe32fe7e82179bb", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5},
+    {"method": "seal_population", "hash": "0x7132a240da61b4fbd17d7de23f68675d620cf95fd55713ac338fa333c82e3a29", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "draw_sample", "hash": "0xa3ce39b43e653336b84f9b50e772e71377ac8fdc03b39f8c837fb0ca4e8f2f8b", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "acknowledge_sample", "hash": "0x8daec08bf027e7719119691385c878f116ebae1d418894027d56b9a3ed37c4c4", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5},
+    {"method": "acknowledge_sample", "hash": "0xa0635c58c34d78b0dab9597618ada8aeac072dccd7965cb243140b35f261f8b7", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
+    {"method": "close_population", "hash": "0x2dbeaab53d20e083ea59db13e9d6951bfc5fdf9f0625c2298424453e68084204", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5}
+  ],
+  "verification": {
+    "execution_success": true,
+    "validator_majority_checked": true,
+    "minimum_agreeing_votes_observed": 3,
+    "latest_final_readback": true,
+    "deployed_source_exact": true,
+    "schema_read": true,
     "schema_methods_verified": [
       "acknowledge_sample",
       "append_record",
@@ -42,39 +49,28 @@
       "draw_sample",
       "get_population",
       "open_population",
+      "sample_is_closed",
       "sampled_record",
       "seal_population"
     ],
-    "source_sha256": "8e32a15feb7b4c905afe356ff75809731e009e63442db33948555268c38cc4ee"
-  },
-  "tooling": {
-    "genlayer_test": "0.29.2",
-    "genvm_linter": "0.11.0",
-    "pyright": "1.1.411",
-    "pytest": "9.1.1"
-  },
-  "verification": {
-    "agreeing_validator_executions_successful": true,
-    "deployed_source_exact": true,
-    "execution_success": true,
-    "latest_final_readback": true,
     "observed": {
-      "commitment_verified": true,
-      "labels": [0, 1],
-      "records_digest": "356f955a7a9fcb3cfdbfd02c4453eac6e7c302d619663205c8f19befd4b8e253",
-      "sample_indexes": [1, 0],
-      "sampling_seed_digest": "de46acdfb50dc05cf900981bf7e3a5d8a8178afa708b5b94e7bbbfc2846016c9",
+      "population_id": "0x797d3b25fb2cca0ff93f60df1910267f3822d655:WEEKLY-AUDIT-2026-09-28",
       "schema": "auditstrata/population/v2",
-      "state": "CLOSED"
-    },
-    "schema_read": true,
-    "status": "FINALIZED",
-    "validator_quorum_checked": true
+      "state": "CLOSED",
+      "record_count": 4,
+      "sample_size": 2,
+      "sample_indexes": [3, 1],
+      "labels": [0, 0, 1, 1],
+      "acknowledgements_complete": true,
+      "records_digest": "72b9fc424f7e9105b74ea004638eea442a25b3c8c6c362f68e0f5995acedb7f3",
+      "sampling_seed_digest": "748408f5fe6b117f3e5a29b65cac274879a564b24efef6d1a8408e2f4687cfb5"
+    }
   },
-  "verified_at": "2026-09-27T18:26:31+01:00",
-  "wallet_addresses": [
-    "0x797d3B25fB2cCA0Ff93F60df1910267f3822D655",
-    "0x2B630000A9F4a1CDa40803Cae8CF80Dc9141d21b"
-  ],
-  "wallet_policy": "Owner and auditor roles are distinct and loaded from the OS credential vault; no private key or mnemonic is stored in this repository."
+  "explorer": {
+    "contract": "https://explorer-studio.genlayer.com/address/0x64c2c19B9C00313DB2CE853D58aEA698543e811E",
+    "deployment_transaction": "https://explorer-studio.genlayer.com/tx/0x6802df3cb0f44a516d835a5d6e8a6fd5d67c864547b6f91b7815e142bc4b0144",
+    "intelligent_transaction": "https://explorer-studio.genlayer.com/tx/0xa3ce39b43e653336b84f9b50e772e71377ac8fdc03b39f8c837fb0ca4e8f2f8b",
+    "close_transaction": "https://explorer-studio.genlayer.com/tx/0x2dbeaab53d20e083ea59db13e9d6951bfc5fdf9f0625c2298424453e68084204"
+  },
+  "wallet_policy": "Owner and auditor are distinct unlocked test wallets loaded from the OS credential vault; no private key or mnemonic is stored in this repository."
 }
