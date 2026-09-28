@@ -34,6 +34,20 @@
     {"method": "acknowledge_sample", "hash": "0xa0635c58c34d78b0dab9597618ada8aeac072dccd7965cb243140b35f261f8b7", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 3, "validator_votes": 5},
     {"method": "close_population", "hash": "0x2dbeaab53d20e083ea59db13e9d6951bfc5fdf9f0625c2298424453e68084204", "status": "FINALIZED", "result": "MAJORITY_AGREE", "agreeing_votes": 5, "validator_votes": 5}
   ],
+  "negative_path_transactions": [
+    {
+      "method": "open_population",
+      "hash": "0xbe1938302fad6892f5de1cc4127d1828f17fbdfce71a5abbee86d3acc867b1a8",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "agreeing_votes": 5,
+      "validator_votes": 5,
+      "execution": "EXPECTED_ROLLBACK",
+      "error": "[EXPECTED] invalid_strata_json",
+      "state_changed": false,
+      "reason": "The first CLI probe encoded the JSON string as an array; the contract rejected the wrong calldata type before mutation."
+    }
+  ],
   "verification": {
     "execution_success": true,
     "validator_majority_checked": true,

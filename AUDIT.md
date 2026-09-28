@@ -41,6 +41,8 @@ Close transaction: `0x2dbeaab53d20e083ea59db13e9d6951bfc5fdf9f0625c2298424453e68
 
 Observed state: `{"schema":"auditstrata/population/v2","state":"CLOSED","record_count":4,"labels":[0,0,1,1],"sample_indexes":[3,1],"acknowledgements_complete":true}`
 
+One preliminary CLI probe (`0xbe1938302fad6892f5de1cc4127d1828f17fbdfce71a5abbee86d3acc867b1a8`) encoded the strata JSON string as an array. All five validators finalized the expected `[EXPECTED] invalid_strata_json` rollback and no state changed. It is retained in the evidence as a negative-path validation test, not counted as a successful-flow transaction.
+
 ## Residual trust assumptions
 
 - Owner and auditor collusion can defeat independence; the contract proves wallet separation and action order, not organizational independence.
